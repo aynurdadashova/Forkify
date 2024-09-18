@@ -22,6 +22,7 @@ Forkify is a JavaScript application that interacts with and API to fetch and dis
 - JavaScript
 - Parcel
 - NPM
+
   ![](./src/img/forkify-screenshot.png)
 
 ## Installation
