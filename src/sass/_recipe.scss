@@ -68,6 +68,12 @@
     display: flex;
     align-items: center;
     padding: 7.5rem 8rem 3.5rem 8rem;
+    //mobile/tablet
+    @media only screen and (max-width: $bp-mobile-medium) {
+      padding: 5.5rem 1rem 2rem;
+      gap: 1rem;
+      justify-content: center;
+    }
   }
 
   &__info {
@@ -75,9 +81,16 @@
     text-transform: uppercase;
     display: flex;
     align-items: center;
+    //mobile
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.5rem;
+    }
 
     &:not(:last-child) {
       margin-right: 4.5rem;
+      @media only screen and (max-width: $bp-smallest) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -116,6 +129,9 @@
       height: 2.25rem;
       width: 2.25rem;
       fill: $color-primary;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      margin-right: 0;
     }
   }
 
@@ -175,5 +191,31 @@
 
   &__publisher {
     font-weight: 700;
+  }
+  .close {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1;
+
+    @media only screen and (max-width: $bp-mobile-medium) {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: $bp-mobile-medium) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 15rem;
+    min-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform: translateX(100%);
+    transition: transform 0.4s;
+    transition-timing-function: cubic-bezier(0.51, 0.92, 0.24, 1.15);
   }
 }

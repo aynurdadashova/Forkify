@@ -7,6 +7,12 @@
 .results {
   list-style: none;
   margin-bottom: 2rem;
+  .message {
+    display: none;
+    @media only screen and (max-width: $bp-mobile-medium) {
+      display: flex;
+    }
+  }
 }
 
 .pagination {
@@ -26,5 +32,10 @@
     &--next {
       float: right;
     }
+  }
+}
+.hidden-mobile {
+  @media only screen and (max-width: $bp-mobile-medium) {
+    transform: translateX(0%) !important;
   }
 }

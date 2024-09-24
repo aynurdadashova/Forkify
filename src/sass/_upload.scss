@@ -23,6 +23,12 @@
     border: none;
     background: none;
   }
+  @media only screen and (max-width: $bp-mobile-medium) {
+    position: absolute;
+    width: 90%;
+    top: 5%;
+    transform: translateX(-50%);
+  }
 }
 
 .overlay {
@@ -52,6 +58,10 @@
     grid-template-columns: 1fr 2.8fr;
     align-items: center;
     gap: 1.5rem;
+    @media only screen and (max-width: $bp-mobile-medium) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
     & label {
       font-size: 1.5rem;
@@ -95,5 +105,9 @@
   &__btn {
     grid-column: 1 / -1;
     justify-self: center;
+  }
+  @media only screen and (max-width: $bp-mobile-medium) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }

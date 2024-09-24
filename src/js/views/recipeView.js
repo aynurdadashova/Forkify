@@ -11,6 +11,22 @@ class RecipeView extends View {
       window.addEventListener(event, handler)
     );
   }
+  // Opening the recipe view on mobile devices
+  openRecipe = function () {
+    const element = document.querySelector('.recipe');
+    window.addEventListener('hashchange', function () {
+      element.classList.add('hidden-mobile');
+    });
+  };
+
+  // Closing the recipe view on mobile devices
+  addHandlerCloseRecipe() {
+    this._parentElement.addEventListener('click', function (e) {
+      const btnRecipeClose = e.target.closest('.close');
+      if (!btnRecipeClose) return;
+      this.classList.remove('hidden-mobile');
+    });
+  }
 
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener('click', function (e) {
@@ -30,6 +46,13 @@ class RecipeView extends View {
 
   _generateMarkup() {
     return `
+    <div class="close">
+          <button class="btn--round" aria-label="Close">
+            <svg class="">
+              <use href="${icons}#icon-close"></use>
+            </svg>
+          </button>
+    </div> 
     <figure class="recipe__fig">
       <img src="${this._data.image}" alt="${
       this._data.title

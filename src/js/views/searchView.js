@@ -1,3 +1,5 @@
+import recipeView from './recipeView.js';
+export const searchResults = document.querySelector('.search-results');
 class SearchView {
   _parentEl = document.querySelector('.search');
   getQuery() {
